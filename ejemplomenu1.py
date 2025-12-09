@@ -48,7 +48,7 @@ if selected == "Inicio":
     ---
     👈 **Utiliza el menú lateral** para navegar entre los módulos y aplicar filtros por carrera o género.
     """)
-    st.write("Bienvenido. Selecciona una opción en el menú para ver los detalles.")
+  
 
 # ==========================================
 # PÁGINA: MATRÍCULA
@@ -501,4 +501,5 @@ elif selected == "Motivación":
     st.markdown("---")
 
     st.info("💡 **Nota:** Se utilizan paletas de color distintas (Rojos vs Azules) para facilitar la diferenciación visual rápida.")
+
 
