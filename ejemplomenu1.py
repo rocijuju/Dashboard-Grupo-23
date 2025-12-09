@@ -32,7 +32,7 @@ with st.sidebar:
 # PÁGINA: INICIO
 # ==========================================
 if selected == "Inicio":
-    st.title("🏠 Dashboard General")
+    st.title("🏠 Sistema de Alerta de Persistencia Estudiantil con Enfoque en la Brecha de Género")
     st.write("Bienvenido. Selecciona una opción en el menú para ver los detalles.")
 
 # ==========================================
@@ -484,4 +484,5 @@ elif selected == "Motivación":
 
     # 5. NOTA AL PIE
     st.markdown("---")
+
     st.info("💡 **Nota:** Se utilizan paletas de color distintas (Rojos vs Azules) para facilitar la diferenciación visual rápida.")
