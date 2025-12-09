@@ -33,6 +33,21 @@ with st.sidebar:
 # ==========================================
 if selected == "Inicio":
     st.title("🏠 Sistema de Alerta de Persistencia Estudiantil con Enfoque en la Brecha de Género")
+    st.markdown("""
+    **Bienvenido a la plataforma de visualización de datos académicos.**
+    
+    Esta herramienta interactiva ha sido diseñada para analizar el comportamiento estudiantil a través de cuatro dimensiones clave, permitiendo identificar patrones, brechas de género y áreas de riesgo en la trayectoria académica.
+
+    ### 🔍 ¿Qué encontrarás en este Dashboard?
+
+    * **📈 Análisis de Matrícula:** Evolución temporal de la admisión de estudiantes, con un enfoque específico en la participación femenina por carrera y comparativas anuales.
+    * **🎓 Tasas de Titulación:** Visualización de la cantidad de titulados por período y género, permitiendo contrastar el egreso efectivo con el ingreso.
+    * **⏳ Duración Real de Carrera:** Comparación entre la duración formal y el tiempo real de titulación mediante **gráficos de violín**, desglosado por género para detectar disparidades en el tiempo de permanencia.
+    * **💡 Motivación y Abandono:** Un análisis crítico que cruza niveles de motivación con la intención de abandono (Heatmaps), identificando grupos de estudiantes en riesgo académico.
+
+    ---
+    👈 **Utiliza el menú lateral** para navegar entre los módulos y aplicar filtros por carrera o género.
+    """)
     st.write("Bienvenido. Selecciona una opción en el menú para ver los detalles.")
 
 # ==========================================
@@ -486,3 +501,4 @@ elif selected == "Motivación":
     st.markdown("---")
 
     st.info("💡 **Nota:** Se utilizan paletas de color distintas (Rojos vs Azules) para facilitar la diferenciación visual rápida.")
+
