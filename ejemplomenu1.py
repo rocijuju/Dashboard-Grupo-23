@@ -89,7 +89,7 @@ elif selected == "Matrícula":
         tabla_comp['Total'] = tabla_comp.sum(axis=1)
         
 
-        col_mujer = 'Femenino' # Ajusta si en tu excel se llama diferente
+        col_mujer = 'Femenino' 
         if col_mujer in tabla_comp.columns:
              tabla_comp['% Mujeres'] = (tabla_comp[col_mujer] / tabla_comp['Total']) * 100
         else:
@@ -130,7 +130,7 @@ elif selected == "Matrícula":
         tabla.index.name = "Año"
         tabla['Total Alumnos'] = tabla.sum(axis=1)
         
-        # Ajusta 'Femenino' si tu columna se llama diferente
+       
         if 'Femenino' in tabla.columns:
             tabla['% Mujeres'] = (tabla['Femenino'] / tabla['Total Alumnos']) * 100
         else:
@@ -176,13 +176,9 @@ elif selected == "Matrícula":
 elif selected == "Titulación": # <--- Asegúrate que coincida con tu menú
     st.title("🎓 Análisis de Titulación")
 
-    # -----------------------------------------------------------------
-    # ⚠️ NOTA IMPORTANTE: 
-    # Si tus titulados están mezclados con los matriculados, filtra aquí.
-    # Ejemplo: df_titulados = df[df['situacion_academica'] == 'Titulado']
-    # Si 'df' ya son solo titulados, deja la siguiente línea tal cual:
+   
     df_titulados = df_t
-    # -----------------------------------------------------------------
+    
 
     # --- FILTRO ESPECÍFICO ---
     st.sidebar.markdown("---")
@@ -196,15 +192,13 @@ elif selected == "Titulación": # <--- Asegúrate que coincida con tu menú
         options=lista_opciones, 
         key="filtro_titulacion" 
     )
-
-    # --- LÓGICA DEL FILTRO ---
     
     # === OPCIÓN A: TODAS LAS CARRERAS (Comparativa) ===
     if carrera_tit == "Todas las carreras":
         st.subheader("📊 Comparativa de Titulación ")
 
         # 1. FILTRAR AÑOS CLAVE
-        anos_clave = [2018, 2019,2020,2021,2022,2023,2024]# Puedes cambiar estos años si quieres
+        anos_clave = [2018, 2019,2020,2021,2022,2023,2024]
         df_comparativo = df_titulados[df_titulados['cat_periodo'].isin(anos_clave)]
 
         # 2. CALCULAR DATOS
@@ -217,7 +211,7 @@ elif selected == "Titulación": # <--- Asegúrate que coincida con tu menú
         tabla_comp = tabla_comp.fillna(0) 
         tabla_comp['Total'] = tabla_comp.sum(axis=1)
         
-        col_mujer = 'Femenino' # Ajusta si en tu excel se llama diferente
+        col_mujer = 'Femenino' 
         if col_mujer in tabla_comp.columns:
              tabla_comp['% Mujeres'] = (tabla_comp[col_mujer] / tabla_comp['Total']) * 100
         else:
@@ -294,8 +288,8 @@ elif selected == "Titulación": # <--- Asegúrate que coincida con tu menú
             }),
             use_container_width=True
         )
-
-        # ==========================================
+        
+# ==========================================
 # PÁGINA: DURACIÓN DE CARRERA
 # ==========================================
 elif selected == "Duración de Carrera":
@@ -381,10 +375,8 @@ elif selected == "Duración de Carrera":
         st.markdown("---")
         st.subheader("📊Promedios de duración por género")
 
-        # 1. Creamos las columnas
         col1, col2, col3 = st.columns(3)
 
-        # 2. Calculamos y mostramos directamente
         # Promedio General
         prom_general = data_plot['Duracion_Real'].mean()
         col1.metric("General", f"{prom_general:.1f} años")
@@ -399,7 +391,8 @@ elif selected == "Duración de Carrera":
 
     else:
         st.warning("No hay datos suficientes para calcular la duración.")
-        # ==========================================
+        
+# ==========================================
 # PÁGINA: MOTIVACIÓN
 # ==========================================
 
@@ -446,7 +439,6 @@ elif selected == "Motivación":
     # 4. GENERACIÓN DE GRÁFICOS (EN DOS COLUMNAS)
     col1, col2 = st.columns(2)
 
-    # Definimos niveles fijos para que ambos gráficos sean idénticos (1-5)
     niveles_fijos = [1, 2, 3, 4, 5]
 
     # --- FUNCIÓN AUXILIAR PARA DIBUJAR HEATMAP ---
@@ -496,8 +488,7 @@ elif selected == "Motivación":
             st.caption(f"⚠️ En Riesgo: {riesgo_h} estudiantes")
         else:
             st.warning("No hay datos de hombres para esta selección.")
-
-    # 5. NOTA AL PIE
+            
     st.markdown("---")
 
     st.info("💡 **Nota:** Se utilizan paletas de color distintas (Rojos vs Azules) para facilitar la diferenciación visual rápida.")
